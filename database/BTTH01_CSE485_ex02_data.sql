@@ -1,5 +1,5 @@
-create database BTTH01_CSE485
-use BTTH01_CSE485
+create database BTTH01_CSE485;
+use BTTH01_CSE485;
 CREATE TABLE tacgia (
     ma_tgia INT UNSIGNED PRIMARY KEY,
     ten_tgia VARCHAR(100) NOT NULL,
