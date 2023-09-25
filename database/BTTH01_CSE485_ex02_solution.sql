@@ -118,10 +118,3 @@
     END //
 
     DELIMITER ;
-
--- l. Bổ sung thêm bảng Users để lưu thông tin Tài khoản đăng nhập và sử dụng cho chức năng Đăng nhập/Quản trị trang web. (5 đ)
-    CREATE TABLE users (
-        id INT PRIMARY KEY AUTO_INCREMENT,
-        username VARCHAR(255) NOT NULL,
-        password VARCHAR(255) NOT NULL
-    );
