@@ -1,51 +1,39 @@
 <?php
-class SongController
+class BaiHatController
 {
-    private $songs;
+    private $service;
 
-    public function __construct()
+    public function __construct($service)
     {
-        $this->songs = [];
+        $this->service = $service;
     }
 
-    public function addSong($title, $category)
+    // Hiển thị danh sách bài hát
+    public function showBaiHatList()
     {
-        $songId = count($this->songs) + 1;
-        $song = new Song($songId, $title, $category);
-        $this->songs[$songId] = $song;
+        $baiHatList = $this->service->getBaiHatList();
+        // Hiển thị view danh sách bài hát
     }
 
-    public function editSong($songId, $title, $category)
+    // Thêm bài hát mới
+    public function addBaiHat($id, $tenBaiHat, $caSi, $idTheLoai)
     {
-        if (isset($this->songs[$songId])) {
-            $song = $this->songs[$songId];
-            $song->setTitle($title);
-            $song->setCategory($category);
-            return true;
-        }
-        return false;
+        $baiHat = new BaiHat($id, $tenBaiHat, $caSi, $idTheLoai);
+        $this->service->addBaiHat($baiHat);
+        // Chuyển hướng về trang danh sách bài hát
     }
 
-    public function deleteSong($songId)
+    // Chỉnh sửa thông tin bài hát
+    public function editBaiHat($id, $tenBaiHat, $caSi, $idTheLoai)
     {
-        if (isset($this->songs[$songId])) {
-            unset($this->songs[$songId]);
-            return true;
-        }
-        return false;
+        $this->service->editBaiHat($id, $tenBaiHat, $caSi, $idTheLoai);
+        // Chuyển hướng về trang danh sách bài hát
     }
 
-    public function getSong($songId)
+    // Xóa bài hát
+    public function deleteBaiHat($id)
     {
-        if (isset($this->songs[$songId])) {
-            return $this->songs[$songId];
-        }
-        return null;
-    }
-
-    public function getAllSongs()
-    {
-        return $this->songs;
+        $this->service->deleteBaiHat($id);
+        // Chuyển hướng về trang danh sách bài hát
     }
 }
-?>

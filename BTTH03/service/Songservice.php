@@ -1,54 +1,46 @@
 <?php
 class SongService
 {
-    private $categories;
-    private $songs;
+    private $SongList;
 
     public function __construct()
     {
-        $this->categories = [];
-        $this->songs = [];
-    }
-
-    // Thêm thể loại
-    public function addCategory($category)
-    {
-        $this->categories[] = $category;
-    }
-
-    // Xóa thể loại
-    public function deleteCategory($category)
-    {
-        $index = array_search($category, $this->categories);
-        if ($index !== false) {
-            unset($this->categories[$index]);
-        }
-    }
-
-    // Lấy danh sách thể loại
-    public function getCategoryList()
-    {
-        return $this->categories;
+        $this->SongList = array();
     }
 
     // Thêm bài hát
-    public function addSong($song)
+    public function addSong($Song)
     {
-        $this->songs[] = $song;
+        $this->SongList[] = $Song;
     }
 
     // Xóa bài hát
-    public function deleteSong($song)
+    public function deleteSong($id)
     {
-        $index = array_search($song, $this->songs);
-        if ($index !== false) {
-            unset($this->songs[$index]);
+        foreach ($this->SongList as $key => $Song) {
+            if ($Song->getId() == $id) {
+                unset($this->SongList[$key]);
+                break;
+            }
+        }
+    }
+
+    // Chỉnh sửa thông tin bài hát
+    public function editSong($id, $tenSong, $caSi, $idTheLoai)
+    {
+        foreach ($this->SongList as $Song) {
+            if ($Song->getId() == $id) {
+                $Song->tenSong = $tenSong;
+                $Song->caSi = $caSi;
+                $Song->idTheLoai = $idTheLoai;
+                break;
+            }
         }
     }
 
     // Lấy danh sách bài hát
     public function getSongList()
     {
-        return $this->songs;
+        return $this->SongList;
     }
 }

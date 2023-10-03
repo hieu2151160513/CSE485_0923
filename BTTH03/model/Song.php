@@ -1,42 +1,37 @@
 <?php
-class Song
+class BaiHat
 {
     private $id;
-    private $title;
-    private $category;
+    private $tenBaiHat;
+    private $caSi;
+    private $idTheLoai;
 
-    public function __construct($id, $title, $category)
+    public function __construct($id, $tenBaiHat, $caSi, $idTheLoai)
     {
         $this->id = $id;
-        $this->title = $title;
-        $this->category = $category;
+        $this->tenBaiHat = $tenBaiHat;
+        $this->caSi = $caSi;
+        $this->idTheLoai = $idTheLoai;
     }
-
-    // Getter và Setter cho các thuộc tính
 
     public function getId()
     {
         return $this->id;
     }
 
-    public function getTitle()
+    public function getTenBaiHat()
     {
-        return $this->title;
+        return $this->tenBaiHat;
     }
 
-    public function setTitle($title)
+    public function getCaSi()
     {
-        $this->title = $title;
+        return $this->caSi;
     }
 
-    public function getCategory()
+    public function getIdTheLoai()
     {
-        return $this->category;
-    }
-
-    public function setCategory($category)
-    {
-        $this->category = $category;
+        return $this->idTheLoai;
     }
 }
 ?>
