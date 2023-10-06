@@ -9,12 +9,12 @@
 <body>
     <div class="container-fluid vh-100">
         <?php
-            include ('./assets/include/header.php');
+            include ('./home/include/header.php');
         ?>
         <div class="main-content my-5">
             <div class="row">
                 <div class="col-md-4 d-flex justify-content-center">
-                    <img src="./assets/images/default.jpg" class="w-75" alt="">
+                    <img src="./home/images/default.jpg" class="w-75" alt="">
                 </div>
                 <div class="col-md-8">
                     <h5 class="text-primary fw-normal">Cây và gió</h5>
@@ -35,7 +35,7 @@
             </div>
         </div>
         <?php
-            include ('./assets/include/footer.php');
+            include ('home\include\footer.php');
         ?>
     </div>
 </body>

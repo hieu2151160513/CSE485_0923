@@ -10,11 +10,11 @@
 <body>
     <div class="container-fluid vh-100">
         <?php
-            include ('./assets/include/header.php');
+            include ('.\home\include\header.php');
         ?>
         <div class="w-100 banner">
             <a href="#">
-                <img src="./assets/images/banner.png" class="w-100" alt="banner">
+                <img src="/home/img/banner.png" class="w-100" alt="banner">
             </a>
         </div>
         <div class="main-content my-3">
@@ -23,25 +23,25 @@
                 <ul class="row gap-1 flex-nowrap">
                     <li class="col-3 border">
                         <a href="./detail.php">
-                            <img src="./assets/images/default.jpg" class="w-100" alt="default">
+                            <img src="./home/images/default.jpg" class="w-100" alt="default">
                             <p class="text-center my-2">Lòng mẹ</p>
                         </a>
                     </li>
                     <li class="col-3 border">
                         <a href="./detail.php">
-                            <img src="./assets/images/default.jpg" class="w-100" alt="default">
+                            <img src="./home/images/default.jpg" class="w-100" alt="default">
                             <p class="text-center my-2">Lòng mẹ</p>
                         </a>
                     </li>
                     <li class="col-3 border">
                         <a href="./detail.php">
-                            <img src="./assets/images/default.jpg" class="w-100" alt="default">
+                            <img src="./home/images/default.jpg" class="w-100" alt="default">
                             <p class="text-center my-2">Lòng mẹ</p>
                         </a>
                     </li>
                     <li class="col-3 border">
                         <a href="./detail.php">
-                            <img src="./assets/images/default.jpg" class="w-100" alt="default">
+                            <img src="./home/images/default.jpg" class="w-100" alt="default">
                             <p class="text-center my-2">Lòng mẹ</p>
                         </a>
                     </li>
@@ -49,7 +49,7 @@
             </div>
         </div>
         <?php
-            include ('./assets/include/footer.php');
+            include ('./home/include/footer.php');
         ?>
     </div>
 </body>
